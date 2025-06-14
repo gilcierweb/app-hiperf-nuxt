@@ -21,14 +21,14 @@ cargo run
 
 ```
 
-### Run app-hiperf
+### Run app-nuxt
 
 ```shell
 cd app-hiperf/
 yarn dev --open
 # run localhost:3000
 
-cd app-hiperf 
+cd app-nuxt 
 pnpm run dev
  
 ```
