@@ -43,7 +43,7 @@ docker-compose up # run api-hiperf http://localhost:9501 app-hiperf http://local
 docker-compose up --build # run api-hiperf http://localhost:9501 app-hiperf http://localhost:3000
 
 docker-compose up --build &> logs.txt
-docker-compose build app-hiperf  &> logs.txt
+docker-compose build app-nuxt  &> logs.txt
 
 docker-compose run --rm app bash
 # Run   migration for create all tables migrations on database
