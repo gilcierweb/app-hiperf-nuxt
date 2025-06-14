@@ -1,0 +1,46 @@
+FROM hyperf/hyperf:8.3-alpine-vedge-swoole
+
+LABEL maintainer="gilcierweb@gmail.com"
+
+RUN set -ex \
+    && apk update \
+    && apk add --no-cache \
+        bash \
+        git \
+        curl \
+        unzip \
+        tzdata \
+        libzip \
+        icu-libs \
+        libstdc++ \
+        shadow \
+        sudo \
+        rsync \
+    && cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime \
+    && echo "America/Sao_Paulo" > /etc/timezone
+
+ENV TZ=America/Sao_Paulo
+
+# Instala o Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Define diretório da aplicação
+WORKDIR /app
+
+# Copia arquivos do projeto (ajuste conforme seu .dockerignore)
+COPY . .
+
+# Instala dependências do projeto
+RUN composer install --no-dev --optimize-autoloader --classmap-authoritative
+
+# Cria usuário não-root e ajusta permissões
+RUN adduser -D -g www www \
+    && chown -R www:www /app
+
+USER www
+
+# Expõe a porta padrão do Swoole
+EXPOSE 9501
+
+# Comando de inicialização do servidor Hyperf
+CMD ["php", "./api-hiperf/bin/hyperf.php", "start"]
