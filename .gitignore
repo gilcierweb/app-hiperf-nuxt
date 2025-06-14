@@ -15,4 +15,4 @@ vendor/
 /phpstan.neon
 /phpunit.xml
 logs.txt
-.pnpm-store/
+.pnpm-store/    

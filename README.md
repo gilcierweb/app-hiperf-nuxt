@@ -1,34 +1,34 @@
-# App Rust Nuxt
-## App build with Rust Lang and Nuxt.js. Api Rust and frontend with nuxt.js using vue.js.
+# App Hiperf Nuxt
+## App build with Hiperf Swoole PHP Lang and Nuxt.js. Api Hiperf and frontend with nuxt.js using vue.js.
 
 ### Skill
 
-- [Rust Lang](https://www.rust-lang.org/)
-- [Actix Web - Rust](https://actix.rs/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [PHP](https://www.php.net/)
+- [Hiperf](https://www.hyperf.io/)
+- [Mysql](https://www.mysql.com/)
 - [Vue.js](https://vuejs.org/)
 - [Nuxt.js](https://nuxt.com/)
 - [Vuetify](https://vuetifyjs.com/)
 
  
 
-### Run api-rust
+### Run api-hiperf
 
 ```shell
-cd api-rust/
+cd api-hiperf/
 cargo run
-# run localhost:8080
+# run localhost:9501
 
 ```
 
-### Run app-nuxt
+### Run app-hiperf
 
 ```shell
-cd app-nuxt/
+cd app-hiperf/
 yarn dev --open
 # run localhost:3000
 
-cd app-nuxt 
+cd app-hiperf 
 pnpm run dev
  
 ```
@@ -38,29 +38,36 @@ pnpm run dev
 ```shell
 
 docker-compose build
-docker-compose up # run api-rust http://localhost:8080 app-nuxt http://localhost:3000
+docker-compose up # run api-hiperf http://localhost:9501 app-hiperf http://localhost:3000
 
-docker-compose up --build # run api-rust http://localhost:8080 app-nuxt http://localhost:3000
+docker-compose up --build # run api-hiperf http://localhost:9501 app-hiperf http://localhost:3000
+
 docker-compose up --build &> logs.txt
-👉  docker-compose build app-nuxt  &> logs.txt
+docker-compose build app-hiperf  &> logs.txt
 
 docker-compose run --rm app bash
-# Run diesel migration for create all tables migrations on database
-docker-compose run --rm app ./diesel migration run  # Or
+# Run   migration for create all tables migrations on database
+docker-compose run --rm app php bin/hyperf.php migrate  # Or
 
 docker-compose run --rm app /bin/bash
-./diesel migration run
+php bin/hyperf.php migrate
+php bin/hyperf.php migrate --force
+php bin/hyperf.php gen:migration create_users_table
+php bin/hyperf.php gen:migration create_users_table --table=users
+php bin/hyperf.php gen:migration create_users_table --create=users
 
 # Run db:seed For populate data faker on database
-docker-compose run --rm app ./seed # Or
+docker-compose run --rm app php bin/hyperf.php db:seed # Or
 
 docker-compose run --rm app /bin/bash
-./seed
+php bin/hyperf.php db:seed
+php bin/hyperf.php db:seed --seed=UserSeeder
+php bin/hyperf.php gen:seeder UserSeeder
 
-# Api Rust individual
-docker-compose build api-rust
-docker-compose run --rm api-rust
-# run http://0.0.0.0:8080
+# Api Hiperf individual
+docker-compose build api-hiperf
+docker-compose run --rm api-hiperf
+# run http://0.0.0.0:9501
 
 # App Nuxt individual
 docker-compose build app-nuxt
@@ -72,7 +79,7 @@ docker-compose ps
 docker-compose stop
 docker-compose down
 docker-compose run --rm app bash
-docker network create rustnet
+docker network create app-network
 
 # sudo docker rmi --force $(docker images -f "dangling=true" -q)
 
