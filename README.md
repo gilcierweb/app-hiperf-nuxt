@@ -12,7 +12,7 @@
 - [Tailwindcss](https://tailwindcss.com/)
 - [Shadcn Vue](https://www.shadcn-vue.com/)
 - [Daisy UI](https://daisyui.com/)
-- [FlyonUI](https://flyonui.com/)
+- [Flyon UI](https://flyonui.com/)
 
  
 
