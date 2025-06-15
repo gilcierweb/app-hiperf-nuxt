@@ -35,6 +35,9 @@ importers:
       eslint:
         specifier: ^9.29.0
         version: 9.29.0(jiti@2.4.2)
+      flyonui:
+        specifier: ^2.2.0
+        version: 2.2.0
       lucide-vue-next:
         specifier: ^0.515.0
         version: 0.515.0(vue@3.5.16(typescript@5.8.3))
@@ -2470,6 +2473,9 @@ packages:
 
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
+
+  flyonui@2.2.0:
+    resolution: {integrity: sha512-Gncal89zwklAYpqV8IjSgN/1edsXnbTlxhfKRcYa2WgeY8jBSuoNBQWqdL1DSLuXarxYluimwIv34YaRKNuSzg==}
 
   fn.name@1.1.0:
     resolution: {integrity: sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==}
@@ -7455,6 +7461,10 @@ snapshots:
       keyv: 4.5.4
 
   flatted@3.3.3: {}
+
+  flyonui@2.2.0:
+    dependencies:
+      '@floating-ui/dom': 1.7.1
 
   fn.name@1.1.0: {}
 

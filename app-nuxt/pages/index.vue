@@ -1,14 +1,21 @@
 <template>
   <div>
     <div class="grid grid-cols-5 gap-4">
+
       <Button variant="accent">Button</Button>
       <Button variant="secondary">Button</Button>
+      <Button variant="success">Button success</Button>
+      <Button variant="info">Button info</Button>
+      <Button variant="warning">Button warning</Button>
+      <Button variant="error">Button error</Button>
       <Button variant="">Button</Button>
       <Button variant="destructive">Button</Button>
       <Button variant="bg-green-500" class="bg-green-500 text-white"
         >Button</Button
       >
-      <Button>Button</Button>
+      <Button class="btn btn-primary">Button</Button>
+      <button class="btn btn-primary">Button btn-primary</button>
+      <button class="btn btn-success">Button btn-success</button>
       <Button>Button</Button>
       <Button>Button</Button>
     </div>
@@ -81,6 +88,17 @@
       <h1>Products</h1>
       <div class="grid grid-cols-3 gap-4">
         <template v-for="product in data.products" :key="product.id">
+          <div class="card sm:max-w-sm">
+  <figure><img src="https://cdn.flyonui.com/fy-assets/components/card/image-9.png" alt="Watch" /></figure>
+  <div class="card-body">
+    <h5 class="card-title mb-2.5">Apple Smart Watch</h5>
+    <p class="mb-4">Stay connected, motivated, and healthy with the latest Apple Watch.</p>
+    <div class="card-actions">
+      <button class="btn btn-primary">Buy Now</button>
+      <button class="btn btn-secondary btn-soft">Add to cart</button>
+    </div>
+  </div>
+</div>
           <Card>
             <CardHeader>
               <CardTitle>{{ product.title }}</CardTitle>
