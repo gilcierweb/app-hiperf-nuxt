@@ -80,22 +80,30 @@
     <div v-else>
       <h1>Products</h1>
       <div class="grid grid-cols-3 gap-4">
-      <template
-        v-for="product in data.products"
-        :key="product.id"
-        
-      >
-        <Card>
-          <CardHeader>
-            <CardTitle>{{ product.title }}</CardTitle>
-            <CardDescription>${{ product.price }}</CardDescription>
-          </CardHeader>
-          <CardContent> {{ product.title }} - ${{ product.price }} - {{ product.category }} </CardContent>
-          <CardFooter> <Button variant="outline"> Cancel </Button>
-        <Button>Deploy</Button> </CardFooter>
-        </Card>
-      </template>
-      </div>     
+        <template v-for="product in data.products" :key="product.id">
+          <Card>
+            <CardHeader>
+              <CardTitle>{{ product.title }}</CardTitle>
+              <CardDescription>${{ product.price }}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              {{ product.title }} - ${{ product.price }} -
+              {{ product.category }}
+              <img
+                :lazy-src="product.thumbnail"
+                :src="product.thumbnail"
+                cover
+                alt="image"
+                aspect-ratio="1"
+              />
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline"> Cancel </Button>
+              <Button>Deploy</Button>
+            </CardFooter>
+          </Card>
+        </template>
+      </div>
       <div v-if="data.products.length === 0">No products available.</div>
     </div>
   </div>
