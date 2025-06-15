@@ -1,13 +1,9 @@
 <template>
-    <div>
-
+  <div>
+    <AppHeader />
+    <div class="container mx-auto">
+    <slot />
     </div>
+    <AppFooter />
+  </div>
 </template>
-
-<script lang="ts">
-  
-</script>
-
-<style scoped>
-
-</style>

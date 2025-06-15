@@ -16,3 +16,8 @@ Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@i
 Router::get('/favicon.ico', function () {
     return '';
 });
+
+require_once BASE_PATH . '/config/routes/api.php';
+
+// require_once BASE_PATH . '/config/routes/admin.php';
+// require_once BASE_PATH . '/config/routes/web.php';
