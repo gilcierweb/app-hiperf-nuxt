@@ -9,6 +9,10 @@
 - [Vue.js](https://vuejs.org/)
 - [Nuxt.js](https://nuxt.com/)
 - [Vuetify](https://vuetifyjs.com/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Shadcn Vue](https://www.shadcn-vue.com/)
+- [Daisy UI](https://daisyui.com/)
+- [FlyonUI](https://flyonui.com/)
 
  
 
