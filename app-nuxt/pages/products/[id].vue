@@ -4,9 +4,9 @@
             <h1>Show Product Page</h1>
 
             <div v-if="pending">
-                <div>
-                    Loading ... <br>  
-                    <span class="loading loading-spinner loading-xl"></span>               
+                <div class="flex items-center justify-center h-96">
+                    <span>Loading ...</span> <br>  
+                    <span class="loading loading-spinner text-info size-40"></span>                     
                 </div>
             </div>
 
