@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="container mx-auto p-4">
         <footer>
-            <p>&copy; 2025 My Nuxt App</p>
+            <p>&copy; {{ new Date().getFullYear() }} My Nuxt App</p>
             <nav>
                 <ul>
                     <li><NuxtLink to="/privacy">Privacy Policy</NuxtLink></li>

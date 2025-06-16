@@ -1,4 +1,4 @@
-import type { HSAccordion, IStaticMethods } from "flyonui/flyonui";
+import type { HSAccordion, HSDropdown, IStaticMethods } from "flyonui/flyonui";
 
 declare global {
   interface Window {
@@ -6,6 +6,7 @@ declare global {
     // FlyonUI
     HSStaticMethods: IStaticMethods;
     HSAccordion: typeof HSAccordion;
+    HSDropdown: typeof HSDropdown;
   }
 }
 

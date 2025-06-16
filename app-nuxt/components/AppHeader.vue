@@ -1,116 +1,50 @@
 <template>
   <div>
-    <Menubar>
-    <MenubarMenu>
-      <MenubarTrigger>File</MenubarTrigger>
-      <MenubarContent>
-        <MenubarItem>
-          New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-        </MenubarItem>
-        <MenubarItem>
-          New Window <MenubarShortcut>⌘N</MenubarShortcut>
-        </MenubarItem>
-        <MenubarItem disabled>
-          New Incognito Window
-        </MenubarItem>
-        <MenubarSeparator />
-        <MenubarSub>
-          <MenubarSubTrigger>Share</MenubarSubTrigger>
-          <MenubarSubContent>
-            <MenubarItem>Email link</MenubarItem>
-            <MenubarItem>Messages</MenubarItem>
-            <MenubarItem>Notes</MenubarItem>
-          </MenubarSubContent>
-        </MenubarSub>
-        <MenubarSeparator />
-        <MenubarItem>
-          Print... <MenubarShortcut>⌘P</MenubarShortcut>
-        </MenubarItem>
-      </MenubarContent>
-    </MenubarMenu>
-    <MenubarMenu>
-      <MenubarTrigger>Edit</MenubarTrigger>
-      <MenubarContent>
-        <MenubarItem>
-          Undo <MenubarShortcut>⌘Z</MenubarShortcut>
-        </MenubarItem>
-        <MenubarItem>
-          Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-        </MenubarItem>
-        <MenubarSeparator />
-        <MenubarSub>
-          <MenubarSubTrigger>Find</MenubarSubTrigger>
-          <MenubarSubContent>
-            <MenubarItem>Search the web</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Find...</MenubarItem>
-            <MenubarItem>Find Next</MenubarItem>
-            <MenubarItem>Find Previous</MenubarItem>
-          </MenubarSubContent>
-        </MenubarSub>
-        <MenubarSeparator />
-        <MenubarItem>Cut</MenubarItem>
-        <MenubarItem>Copy</MenubarItem>
-        <MenubarItem>Paste</MenubarItem>
-      </MenubarContent>
-    </MenubarMenu>
-    <MenubarMenu>
-      <MenubarTrigger>View</MenubarTrigger>
-      <MenubarContent>
-        <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
-        <MenubarCheckboxItem :model-value="true">
-          Always Show Full URLs
-        </MenubarCheckboxItem>
-        <MenubarSeparator />
-        <MenubarItem inset>
-          Reload <MenubarShortcut>⌘R</MenubarShortcut>
-        </MenubarItem>
-        <MenubarItem disabled inset>
-          Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
-        </MenubarItem>
-        <MenubarSeparator />
-        <MenubarItem inset>
-          Toggle Fullscreen
-        </MenubarItem>
-        <MenubarSeparator />
-        <MenubarItem inset>
-          Hide Sidebar
-        </MenubarItem>
-      </MenubarContent>
-    </MenubarMenu>
-    <MenubarMenu>
-      <MenubarTrigger>Profiles</MenubarTrigger>
-      <MenubarContent>
-        <MenubarRadioGroup model-value="benoit">
-          <MenubarRadioItem value="andy">
-            Andy
-          </MenubarRadioItem>
-          <MenubarRadioItem value="benoit">
-            Benoit
-          </MenubarRadioItem>
-          <MenubarRadioItem value="Luis">
-            Luis
-          </MenubarRadioItem>
-        </MenubarRadioGroup>
-        <MenubarSeparator />
-        <MenubarItem inset>
-          Edit...
-        </MenubarItem>
-        <MenubarSeparator />
-        <MenubarItem inset>
-          Add Profile...
-        </MenubarItem>
-      </MenubarContent>
-    </MenubarMenu>
-  </Menubar>
-  <header>
-    <nav>
-      <ul>
-        <li><NuxtLink to="/about">About</NuxtLink></li>
-        <li><NuxtLink to="/posts/1">Post 1</NuxtLink></li>
-        <li><NuxtLink to="/posts/2">Post 2</NuxtLink></li>
-      </ul>
+    <nav class="navbar rounded-box flex w-full items-center justify-between gap-2 shadow-base-300/20 shadow-sm">
+      <div class="navbar-start max-md:w-1/4">
+        <a class="link text-base-content link-neutral text-xl font-bold no-underline" href="#">
+          FlyonUI
+        </a>
+      </div>
+      <div class="navbar-center max-md:hidden">
+        <ul class="menu menu-horizontal p-0 font-medium">
+          <li>
+            <NuxtLink to="/">Home</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/about">About</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/">Contact</NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-end items-center gap-4">
+        <div class="dropdown relative inline-flex md:hidden">
+          <button id="dropdown-default" type="button" class="dropdown-toggle btn btn-text btn-secondary btn-square"
+            aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+            <span class="icon-[tabler--menu-2] dropdown-open:hidden size-5"></span>
+            <span class="icon-[tabler--x] dropdown-open:block hidden size-5"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu" aria-orientation="vertical"
+            aria-labelledby="dropdown-default">
+            <li>
+              <NuxtLink to="/" class="dropdown-item">Home</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/about" class="dropdown-item">About</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/" class="dropdown-item">Contact</NuxtLink>
+            </li>
+          </ul>
+        </div>
+        <a class="btn max-md:btn-square btn-primary" href="#">
+          <span class="max-md:hidden">Get started</span>
+          <span class="icon-[tabler--arrow-right] rtl:rotate-180"></span>
+        </a>
+      </div>
     </nav>
-  </header>
+
   </div>
 </template>

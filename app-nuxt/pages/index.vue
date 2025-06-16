@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="grid grid-cols-5 gap-4">
-
       <Button variant="accent">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="success">Button success</Button>
@@ -89,37 +88,31 @@
       <div class="grid grid-cols-3 gap-4">
         <template v-for="product in data.products" :key="product.id">
           <div class="card sm:max-w-sm">
-  <figure><img src="https://cdn.flyonui.com/fy-assets/components/card/image-9.png" alt="Watch" /></figure>
-  <div class="card-body">
-    <h5 class="card-title mb-2.5">Apple Smart Watch</h5>
-    <p class="mb-4">Stay connected, motivated, and healthy with the latest Apple Watch.</p>
-    <div class="card-actions">
-      <button class="btn btn-primary">Buy Now</button>
-      <button class="btn btn-secondary btn-soft">Add to cart</button>
-    </div>
-  </div>
-</div>
-          <Card>
-            <CardHeader>
-              <CardTitle>{{ product.title }}</CardTitle>
-              <CardDescription>${{ product.price }}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              {{ product.title }} - ${{ product.price }} -
-              {{ product.category }}
-              <img
+            <figure>
+                  <img
                 :lazy-src="product.thumbnail"
                 :src="product.thumbnail"
                 cover
                 alt="image"
                 aspect-ratio="1"
               />
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline"> Cancel </Button>
-              <Button>Deploy</Button>
-            </CardFooter>
-          </Card>
+            </figure>
+            <div class="card-body">
+              <h5 class="card-title mb-2.5">{{ product.title }}</h5>
+              <p class="text-success font-weight-bold">{{ formatNumberBR(product?.price) }}</p>
+              <p class="mb-4">
+                {{ $truncate(product.description, 70, '...') }}
+              </p>
+              <p> {{ product.category }}</p>
+              <div class="card-actions">
+                <button class="btn btn-primary">Buy Now</button>
+               <NuxtLink :to="`/products/${product.id}`">             
+                      <button class="btn btn-secondary btn-soft btn-block">Details</button>
+                </NuxtLink>
+              </div>
+            </div>
+          </div>        
+
         </template>
       </div>
       <div v-if="data.products.length === 0">No products available.</div>
