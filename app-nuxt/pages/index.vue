@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-4">
       <Button variant="accent">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="success">Button success</Button>
@@ -21,7 +21,7 @@
     <div class="bg-warning bg-green-400 text-warning-foreground">
       alert warning
     </div>
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
       <Card>
         <CardHeader>
           <CardTitle>Card Title</CardTitle>
@@ -85,7 +85,7 @@
     <div v-if="data == null">No data</div>
     <div v-else>
       <h1>Products</h1>
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         <template v-for="product in data.products" :key="product.id">
           <div class="card sm:max-w-sm">
             <figure>

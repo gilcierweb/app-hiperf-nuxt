@@ -3,8 +3,11 @@
 @import "flyonui/variants.css";
 @source "../../node_modules/flyonui/flyonui.js"; 
 
-@source "../../node_modules/flyonui/dist/accordion.js";
-@source "../../node_modules/flyonui/dist/dropdown.js";
+@plugin "@iconify/tailwind4";
+
+@source "../node_modules/flyonui/dist/accordion.js";
+@source "../node_modules/flyonui/dist/dropdown.js";
+
 
 /* Import Third-party override css */
 /* @import "flyonui/src/vendor/flatpickr.css"; */

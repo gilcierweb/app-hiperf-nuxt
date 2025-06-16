@@ -29,7 +29,7 @@
                 <div >
                     <h1 class="text-base-content text-4xl">{{ product?.title }}</h1>
                     <p class="text-success font-weight-bold mt-2">{{ formatNumberBR(product?.price) }}</p>
-                    <p class="my-3"><v-chip>{{ product?.category }}</v-chip></p>                
+                    <p class="my-3"><span>{{ product?.category }}</span></p>                
                      <button class="btn btn-primary btn-xl">Buy Now</button>
                 </div>
                 <div class="grid grid-cols-1">
@@ -49,17 +49,11 @@ const route = useRoute();
 const id = route.params.id;
 console.log(route.params.id);
 
-interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    url: string;
-    category: string;
-    image: string;
-}
-
 const { data: product, pending } = await useLazyFetch<Product>(`https://dummyjson.com/products/${id}`);
+console.log({
+  product,
+  id,
+});
 </script>
 
 <style scoped></style>

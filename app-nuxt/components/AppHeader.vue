@@ -48,3 +48,18 @@
 
   </div>
 </template>
+
+<script setup lang="ts">
+
+// onMounted(() => {
+
+//   nextTick(() => {
+//     if (window.HSStaticMethods) {
+//       window.HSStaticMethods.autoInit();    
+//     } 
+//      if (window.HSDropdown) {      
+//       window.HSDropdown.autoInit();
+//     }
+//   });
+// });
+</script>
