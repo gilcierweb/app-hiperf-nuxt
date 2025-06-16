@@ -13,7 +13,7 @@
 - [Daisy UI](https://daisyui.com/)
 - [Flyon UI](https://flyonui.com/)
 
- 
+![App Nuxt](app-nuxt/assets/images/app-nuxt.webp) 
 
 ### Run api-hiperf
 
